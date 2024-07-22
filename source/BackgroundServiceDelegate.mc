@@ -5,8 +5,7 @@
 //
 //-----------------------------------------------------------------------------------
 //
-// GarminHomeAssistant is a Garmin IQ application written in Monkey C and routinely
-// tested on a Venu 2 device. The source code is provided at:
+// GarminHomeAssistantWidget is a Garmin IQ widget written in Monkey C. The source code is provided at:
 //            https://github.com/house-of-abbey/GarminHomeAssistantWidget.
 //
 // P A Abbey & J D Abbey & Someone0nEarth, 31 October 2023
@@ -14,8 +13,7 @@
 //
 // Description:
 //
-// The background service delegate currently just reports the Garmin watch's battery
-// level.
+// Light or switch toggle button that calls the API to maintain the up to date state.
 //
 //-----------------------------------------------------------------------------------
 
