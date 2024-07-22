@@ -13,7 +13,8 @@
 //
 // Description:
 //
-// Light or switch toggle button that calls the API to maintain the up to date state.
+// The background service delegate currently just reports the Garmin watch's battery
+// level.
 //
 //-----------------------------------------------------------------------------------
 
