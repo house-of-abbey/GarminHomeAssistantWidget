@@ -25,3 +25,4 @@
 |   2.10  | Bug fix release for menu caching being turned on with auto start and also being turned off, and language corrections (Czech & Slovenian). |
 |   2.11  | Re-enabled Edge 540 and Edge 840 devices which we are unable to support due to simulator issues, but the Edge 840 device has been confirmed as working by a @Petucky. |
 |   2.12  | Moved the template status queries to Webhooks in order to fix the situation where an account is a non-privileged user. Added telemetry update on activity completion to make automations more timely at the end of an activity. |
+|   2.13  | Better support for templates by isolating erroneous returns and marking the menu item. |
