@@ -164,8 +164,6 @@ class HomeAssistantTemplateMenuItem extends WatchUi.IconMenuItem {
             // System.println("HomeAssistantTemplateMenuItem getState(): No Internet connection, skipping API call.");
             ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoInternet) as Lang.String + ".");
             getApp().setApiStatus(WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String);
-        } else if (Settings.getWebhookId().equals("")) {
-            getApp().updateNextMenuItem();
         } else {
             // https://developers.home-assistant.io/docs/api/native-app-integration/sending-data/#render-templates
             var url = Settings.getApiUrl() + "/webhook/" + Settings.getWebhookId();

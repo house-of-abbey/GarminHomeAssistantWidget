@@ -26,13 +26,14 @@ using Toybox.Timer;
 
 (:background)
 class HomeAssistantApp extends Application.AppBase {
-    private var mApiStatus           as Lang.String       or Null;
-    private var mMenuStatus          as Lang.String       or Null;
-    private var mHaMenu              as HomeAssistantView or Null;
-    private var mQuitTimer           as QuitTimer         or Null;
+    private var mApiStatus        as Lang.String       or Null;
+    private var mMenuStatus       as Lang.String       or Null;
+    private var mHaMenu           as HomeAssistantView or Null;
+    private var mQuitTimer        as QuitTimer         or Null;
     // Array initialised by onReturnFetchMenuConfig()
-    private var mItemsToUpdate       as Lang.Array<HomeAssistantToggleMenuItem or HomeAssistantTemplateMenuItem> or Null;
-    private var mNextItemToUpdate    as Lang.Number  = 0;     // Index into the above array
+    private var mItemsToUpdate    as Lang.Array<HomeAssistantToggleMenuItem or HomeAssistantTemplateMenuItem> or Null;
+    private var mNextItemToUpdate as Lang.Number  = 0;     // Index into the above array
+    private var mUpdating         as Lang.Boolean = false; // Don't start a second chain of updates
 
     function initialize() {
         AppBase.initialize();
@@ -51,34 +52,12 @@ class HomeAssistantApp extends Application.AppBase {
     // Return the initial view of your application here
     function getInitialView() as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>? {
         mQuitTimer  = new QuitTimer();
-        // RezStrings.update();
         mApiStatus  = WatchUi.loadResource($.Rez.Strings.Checking) as Lang.String;
         mMenuStatus = WatchUi.loadResource($.Rez.Strings.Checking) as Lang.String;
         Settings.update();
-
-        if (Settings.getApiKey().length() == 0) {
-            // System.println("HomeAssistantApp getInitialView(): No API key in the application Settings.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.NoAPIKey) as Lang.String + ".");
-        } else if (Settings.getApiUrl().length() == 0) {
-            // System.println("HomeAssistantApp getInitialView(): No API URL in the application Settings.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.NoApiUrl) as Lang.String + ".");
-        } else if (Settings.getApiUrl().substring(-1, Settings.getApiUrl().length()).equals("/")) {
-            // System.println("HomeAssistantApp getInitialView(): API URL must not have a trailing slash '/'.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.TrailingSlashErr) as Lang.String + ".");
-        } else if (Settings.getConfigUrl().length() == 0) {
-            // System.println("HomeAssistantApp getInitialView(): No configuration URL in the application settings.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.NoConfigUrl) as Lang.String + ".");
-        } else if (! System.getDeviceSettings().phoneConnected) {
-            // System.println("HomeAssistantApp fetchMenuConfig(): No Phone connection, skipping API call.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.NoPhone) as Lang.String + ".");
-        } else if (! System.getDeviceSettings().connectionAvailable) {
-            // System.println("HomeAssistantApp fetchMenuConfig(): No Internet connection, skipping API call.");
-            return ErrorView.create(WatchUi.loadResource($.Rez.Strings.NoInternet) as Lang.String + ".");
-        } else {
-            fetchMenuConfig();
-            fetchApiStatus();
-            return [new RootView(self), new RootViewDelegate(self)] as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>;
-        }
+        fetchMenuConfig();
+        fetchApiStatus();
+        return [new RootView(self), new RootViewDelegate(self)] as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>;
     }
 
     // Callback function after completing the GET request to fetch the configuration menu.
@@ -145,7 +124,7 @@ class HomeAssistantApp extends Application.AppBase {
     }
 
     function fetchMenuConfig() as Void{
-        // System.println("URL = " + Settings.getConfigUrl());
+        // System.println("HomeAssistantApp fetchMenuConfig(): URL = " + Settings.getConfigUrl());
         if (Settings.getConfigUrl().equals("")) {
             mMenuStatus = WatchUi.loadResource($.Rez.Strings.Unconfigured) as Lang.String;
             WatchUi.requestUpdate();
@@ -158,11 +137,11 @@ class HomeAssistantApp extends Application.AppBase {
             }
             if (menu == null) {
                 if (! System.getDeviceSettings().phoneConnected) {
-                    // System.println("HomeAssistantApp getState(): No Phone connection, skipping API call.");
+                    // System.println("HomeAssistantApp fetchMenuConfig(): No Phone connection, skipping API call.");
                     ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoPhone) as Lang.String + ".");
                     mMenuStatus = WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String;
                 } else if (! System.getDeviceSettings().connectionAvailable) {
-                    // System.println("HomeAssistantApp getState(): No Internet connection, skipping API call.");
+                    // System.println("HomeAssistantApp fetchMenuConfig(): No Internet connection, skipping API call.");
                     ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoInternet) as Lang.String + ".");
                     mMenuStatus = WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String;
                 } else {
@@ -190,11 +169,14 @@ class HomeAssistantApp extends Application.AppBase {
     }
 
     function startUpdates() {
-        mItemsToUpdate = mHaMenu.getItemsToUpdate();
-        // Start the continuous update process that continues for as long as the application is running.
-        // The chain of functions from 'updateNextMenuItem()' calls 'updateNextMenuItem()' on completion.
-        if (mItemsToUpdate.size() > 0) {
-            updateNextMenuItem();
+        if (mHaMenu != null and !mUpdating) {
+            mItemsToUpdate = mHaMenu.getItemsToUpdate();
+            // Start the continuous update process that continues for as long as the application is running.
+            // The chain of functions from 'updateNextMenuItem()' calls 'updateNextMenuItem()' on completion.
+            if (mItemsToUpdate.size() > 0) {
+                mUpdating = true;
+                updateNextMenuItem();
+            }
         }
     }
 
@@ -203,7 +185,6 @@ class HomeAssistantApp extends Application.AppBase {
     function onReturnFetchApiStatus(responseCode as Lang.Number, data as Null or Lang.Dictionary or Lang.String) as Void {
         // System.println("HomeAssistantApp onReturnFetchApiStatus() Response Code: " + responseCode);
         // System.println("HomeAssistantApp onReturnFetchApiStatus() Response Data: " + data);
-
         mApiStatus = WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String;
         switch (responseCode) {
             case Communications.BLE_HOST_TIMEOUT:
@@ -252,16 +233,17 @@ class HomeAssistantApp extends Application.AppBase {
     }
 
     function fetchApiStatus() as Void {
+        // System.println("HomeAssistantApp fetchApiStatus()");
         if (Settings.getApiUrl().equals("")) {
             mApiStatus = WatchUi.loadResource($.Rez.Strings.Unconfigured) as Lang.String;
             WatchUi.requestUpdate();
         } else {
             if (! System.getDeviceSettings().phoneConnected) {
-                // System.println("HomeAssistantApp getState(): No Phone connection, skipping API call.");
+                // System.println("HomeAssistantApp fetchApiStatus(): No Phone connection, skipping API call.");
                 mApiStatus = WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String;
                 ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoPhone) as Lang.String + ".");
             } else if (! System.getDeviceSettings().connectionAvailable) {
-                // System.println("HomeAssistantApp getState(): No Internet connection, skipping API call.");
+                // System.println("HomeAssistantApp fetchApiStatus(): No Internet connection, skipping API call.");
                 mApiStatus = WatchUi.loadResource($.Rez.Strings.Unavailable) as Lang.String;
                 ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoInternet) as Lang.String + ".");
             } else {
@@ -320,6 +302,8 @@ class HomeAssistantApp extends Application.AppBase {
     function onSettingsChanged() as Void {
         // System.println("HomeAssistantApp onSettingsChanged()");
         Settings.update();
+        fetchMenuConfig();
+        fetchApiStatus();
     }
 
     // Called each time the Registered Temporal Event is to be invoked. So the object is created each time on request and
