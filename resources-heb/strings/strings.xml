@@ -42,21 +42,24 @@
   <string id="Cached">שמור במטמון</string>
   <string id="Menu">תַפרִיט</string>
   <string id="Memory">זיכרון</string>
+  <string id="Empty">ריק</string>
+  <string id="TemplateError">שגיאת תבנית</string>
+  <string id="PotentialError">שגיאה פוטנציאלית</string>
   <!-- עבור ה-GUI של ההגדרות -->
   <string id="SettingsSelect">בחר...</string>
   <string id="SettingsApiKey">מפתח API עבור HomeAssistant.</string>
   <string id="SettingsApiKeyPrompt">אסימון גישה ארוך-חיים.</string>
   <string id="SettingsApiUrl">כתובת URL עבור HomeAssistant API.</string>
-  <string id="SettingsConfigUrl">כתובת URL לתצורת תפריט (JSON).</string>
+  <string id="SettingsConfigUrl">כתובת URL עבור תצורת תפריט (JSON).</string>
   <string id="SettingsCacheConfig">האם האפליקציה צריכה לשמור את תצורת התפריט במטמון?</string>
   <string id="SettingsClearCache">האם היישום צריך לנקות את המטמון הקיים בפעם הבאה שהוא יופעל?</string>
   <string id="SettingsAppTimeout">פסק זמן בשניות. צא מהאפליקציה לאחר תקופה זו של חוסר פעילות כדי לחסוך בסוללת המכשיר.</string>
-  <string id="SettingsConfirmTimeout">לאחר זמן זה (בשניות), תיבת דו-שיח לאישור פעולה נסגרת אוטומטית והפעולה מבוטלת. הגדר ל-0 כדי לבטל את הזמן הקצוב.</string>
+  <string id="SettingsConfirmTimeout">לאחר זמן זה (בשניות), תיבת דו-שיח לאישור פעולה נסגרת אוטומטית והפעולה מבוטלת. הגדר ל-0 כדי להשבית את הזמן הקצוב.</string>
   <string id="SettingsTextAlign">יישור תפריט שמאלה (כבוי) או ימינה (מופעל).</string>
   <string id="LeftToRight">משמאל לימין</string>
   <string id="RightToLeft">מימין לשמאל</string>
   <string id="SettingsWidgetStart">הפעל את האפליקציה באופן אוטומטי מהווידג'ט מבלי לחכות להקשה.</string>
   <string id="SettingsEnableBatteryLevel">אפשר את שירות הרקע כדי לשלוח את נתוני רמת הסוללה של המכשיר, המיקום (אם נתמכים) ל-Home Assistant.</string>
   <string id="SettingsBatteryLevelRefreshRate">קצב הרענון (בדקות) שבו שירות הרקע צריך לחזור על שליחת נתונים.</string>
-  <string id="WebhookId">(לקריאה בלבד) מזהה ה-Webhook שנוצר על ידי המכשיר עבור עדכוני שירות ברקע. ייתכן שתדרוש את זה בשביל איתור באגים.</string>
+  <string id="WebhookId">(לקריאה בלבד) מזהה ה-Webhook שנוצר על ידי המכשיר עבור עדכוני שירות ברקע. ייתכן שתדרוש זאת לצורך איתור באגים.</string>
 </strings>

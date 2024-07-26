@@ -42,6 +42,9 @@
   <string id="Cached">Bufret</string>
   <string id="Menu">Meny</string>
   <string id="Memory">Hukommelse</string>
+  <string id="Empty">Tømme</string>
+  <string id="TemplateError">Malfeil</string>
+  <string id="PotentialError">Potensiell feil</string>
   <!-- For innstillingene GUI -->
   <string id="SettingsSelect">Plukke ut...</string>
   <string id="SettingsApiKey">API-nøkkel for HomeAssistant.</string>

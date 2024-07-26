@@ -42,6 +42,9 @@
   <string id="Cached">Cachelagret</string>
   <string id="Menu">Menu</string>
   <string id="Memory">Hukommelse</string>
+  <string id="Empty">Tom</string>
+  <string id="TemplateError">Skabelonfejl</string>
+  <string id="PotentialError">Potentiel fejl</string>
   <!-- Til indstillingerne GUI -->
   <string id="SettingsSelect">Vælg...</string>
   <string id="SettingsApiKey">API-nøgle til HomeAssistant.</string>

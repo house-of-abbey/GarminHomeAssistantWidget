@@ -36,6 +36,9 @@
   <string id="Cached">Cached</string>
   <string id="Menu">Menu</string>
   <string id="Memory">Memory</string>
+  <string id="Empty">Empty</string>
+  <string id="TemplateError">Template Error</string>
+  <string id="PotentialError">Potential Error</string>
 
   <!-- For the settings GUI -->
   <string id="SettingsSelect">Select...</string>

@@ -108,16 +108,15 @@ class HomeAssistantView extends WatchUi.Menu2 {
 // Reference: https://developer.garmin.com/connect-iq/core-topics/input-handling/
 //
 class HomeAssistantViewDelegate extends WatchUi.Menu2InputDelegate {
-    private var mTimer          as QuitTimer;
+    private var mTimer as QuitTimer;
 
     function initialize() {
         Menu2InputDelegate.initialize();
-        mTimer          = getApp().getQuitTimer();
+        mTimer = getApp().getQuitTimer();
     }
 
     function onBack() {
         mTimer.reset();
-
         WatchUi.popView(WatchUi.SLIDE_RIGHT);
     }
 

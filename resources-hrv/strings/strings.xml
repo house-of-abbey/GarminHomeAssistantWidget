@@ -42,6 +42,9 @@
   <string id="Cached">Spremljeno u predmemoriju</string>
   <string id="Menu">Jelovnik</string>
   <string id="Memory">Memorija</string>
+  <string id="Empty">Prazan</string>
+  <string id="TemplateError">Pogreška predloška</string>
+  <string id="PotentialError">Potencijalna pogreška</string>
   <!-- Za GUI postavki -->
   <string id="SettingsSelect">Izaberi...</string>
   <string id="SettingsApiKey">API ključ za HomeAssistant.</string>

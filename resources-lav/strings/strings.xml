@@ -42,6 +42,9 @@
   <string id="Cached">Kešatmiņā saglabāts</string>
   <string id="Menu">Izvēlne</string>
   <string id="Memory">Atmiņa</string>
+  <string id="Empty">Tukšs</string>
+  <string id="TemplateError">Veidnes kļūda</string>
+  <string id="PotentialError">Iespējama kļūda</string>
   <!-- Iestatījumu GUI -->
   <string id="SettingsSelect">Izvēlieties...</string>
   <string id="SettingsApiKey">API atslēga Home Assistant.</string>

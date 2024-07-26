@@ -42,6 +42,9 @@
   <string id="Cached">快取</string>
   <string id="Menu">選單</string>
   <string id="Memory">記憶</string>
+  <string id="Empty">空的</string>
+  <string id="TemplateError">模板錯誤</string>
+  <string id="PotentialError">潛在錯誤</string>
   <!-- 對於設定 GUI -->
   <string id="SettingsSelect">選擇...</string>
   <string id="SettingsApiKey">HomeAssistant 的 API 金鑰。</string>
