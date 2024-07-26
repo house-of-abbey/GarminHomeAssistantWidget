@@ -27,9 +27,9 @@
   <string id="NoAPIKey">Nicio cheie API în setările aplicației</string>
   <string id="NoApiUrl">Nicio adresă URL API în setările aplicației</string>
   <string id="NoConfigUrl">Nicio adresă URL de configurare în setările aplicației</string>
-  <string id="ApiFlood">Apeluri API prea rapide. Vă rugăm să încetiniți solicitările dvs.</string>
-  <string id="ApiUrlNotFound">URL nu a fost găsit. Potențială eroare URL API în setări.</string>
-  <string id="ConfigUrlNotFound">URL nu a fost găsit. Potențială eroare URL de configurare în setări.</string>
+  <string id="ApiFlood">Apeluri API prea rapide. Vă rugăm să încetiniți cererile dvs.</string>
+  <string id="ApiUrlNotFound">Adresa URL nu a fost găsită. Potențială eroare URL API în setări.</string>
+  <string id="ConfigUrlNotFound">Adresa URL nu a fost găsită. Potențială eroare URL de configurare în setări.</string>
   <string id="NoJson">Niciun JSON nu a fost returnat de la solicitarea HTTP.</string>
   <string id="UnhandledHttpErr">Solicitarea HTTP a returnat codul de eroare =</string>
   <string id="TrailingSlashErr">Adresa URL API nu trebuie să aibă o bară oblică „/”</string>
@@ -42,6 +42,9 @@
   <string id="Cached">În cache</string>
   <string id="Menu">Meniul</string>
   <string id="Memory">Memorie</string>
+  <string id="Empty">Gol</string>
+  <string id="TemplateError">Eroare de șablon</string>
+  <string id="PotentialError">Eroare potențială</string>
   <!-- Pentru GUI de setări -->
   <string id="SettingsSelect">Selectați...</string>
   <string id="SettingsApiKey">Cheie API pentru HomeAssistant.</string>

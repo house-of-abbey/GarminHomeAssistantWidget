@@ -35,13 +35,16 @@
   <string id="TrailingSlashErr">Adresa URL rozhrania API nesmie obsahovať koncovú lomku „/“</string>
   <string id="WebhookFailed">Registrácia Webhooku zlyhala</string>
   <string id="TemplateError">Vykreslenie šablóny zlyhalo</string>
-  <string id="Available">K dispozícii</string>
+  <string id="Available">Dostupné</string>
   <string id="Checking">Prebieha kontrola...</string>
   <string id="Unavailable">Nedostupné</string>
   <string id="Unconfigured">Nekonfigurované</string>
   <string id="Cached">Vo vyrovnávacej pamäti</string>
   <string id="Menu">Ponuka</string>
   <string id="Memory">Pamäť</string>
+  <string id="Empty">Prázdny</string>
+  <string id="TemplateError">Chyba šablóny</string>
+  <string id="PotentialError">Potenciálna chyba</string>
   <!-- Pre nastavenia GUI -->
   <string id="SettingsSelect">Vybrať...</string>
   <string id="SettingsApiKey">Kľúč API pre HomeAssistant.</string>
@@ -51,7 +54,7 @@
   <string id="SettingsCacheConfig">Má aplikácia uložiť do vyrovnávacej pamäte konfiguráciu ponuky?</string>
   <string id="SettingsClearCache">Mala by aplikácia pri ďalšom spustení vymazať existujúcu vyrovnávaciu pamäť?</string>
   <string id="SettingsAppTimeout">Časový limit v sekundách. Po tejto dobe nečinnosti ukončite aplikáciu, aby ste šetrili batériu zariadenia.</string>
-  <string id="SettingsConfirmTimeout">Po tomto čase (v sekundách) sa dialógové okno s potvrdením akcie automaticky zatvorí a akcia sa zruší. Ak chcete vypnúť časový limit, nastavte na 0.</string>
+  <string id="SettingsConfirmTimeout">Po tomto čase (v sekundách) sa dialógové okno s potvrdením akcie automaticky zatvorí a akcia sa zruší. Ak chcete časový limit deaktivovať, nastavte na 0.</string>
   <string id="SettingsTextAlign">Zarovnanie ponuky vľavo (vypnuté) alebo vpravo (zapnuté).</string>
   <string id="LeftToRight">Zľava doprava</string>
   <string id="RightToLeft">Sprava doľava</string>
