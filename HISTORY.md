@@ -27,4 +27,4 @@
 |   2.12  | Moved the template status queries to Webhooks in order to fix the situation where an account is a non-privileged user. Added telemetry update on activity completion to make automations more timely at the end of an activity. |
 |   2.13  | Better support for templates by isolating erroneous returns and marking the menu item. Prevented the application crashing when settings are amended at run time. |
 |   2.14  | Bug fix for lack of phone connection when starting the widget. |
-|   2.15  | Templates returning anything other than a string get an error message rather than the value being discarded. |
+|   2.15  | Templates returning anything other than a string get an error message rather than the value being discarded. Bug fix for reporting activity metrics that might be `null` sometimes. This is unsimulatable situation, so this version is a change based on an informed guess. |
