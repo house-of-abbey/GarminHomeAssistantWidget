@@ -142,6 +142,9 @@ class HomeAssistantTemplateMenuItem extends WatchUi.IconMenuItem {
                     } else {
                         setSubLabel($.Rez.Strings.PotentialError);
                     }
+                } else {
+                    // The template must return a Lang.String, a number can be either integer or float and hence cannot be formatted locally without error.
+                    setSubLabel(WatchUi.loadResource($.Rez.Strings.TemplateError) as Lang.String);
                 }
                 requestUpdate();
                 // Now this feels very "closely coupled" to the application, but it is the most reliable method instead of using a timer.
