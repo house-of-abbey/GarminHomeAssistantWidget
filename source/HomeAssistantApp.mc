@@ -50,14 +50,14 @@ class HomeAssistantApp extends Application.AppBase {
     }
 
     // Return the initial view of your application here
-    function getInitialView() as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>? {
+    function getInitialView() as [ WatchUi.Views ] or [ WatchUi.Views, WatchUi.InputDelegates ] {
         mQuitTimer  = new QuitTimer();
         mApiStatus  = WatchUi.loadResource($.Rez.Strings.Checking) as Lang.String;
         mMenuStatus = WatchUi.loadResource($.Rez.Strings.Checking) as Lang.String;
         Settings.update();
         fetchMenuConfig();
         fetchApiStatus();
-        return [new RootView(self), new RootViewDelegate(self)] as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>;
+        return [new RootView(self), new RootViewDelegate(self)];
     }
 
     // Callback function after completing the GET request to fetch the configuration menu.
@@ -308,7 +308,7 @@ class HomeAssistantApp extends Application.AppBase {
 
     // Called each time the Registered Temporal Event is to be invoked. So the object is created each time on request and
     // then destroyed on completion (to save resources).
-    function getServiceDelegate() as Lang.Array<System.ServiceDelegate> {
+    function getServiceDelegate() as [ System.ServiceDelegate ] {
         return [new BackgroundServiceDelegate()];
     }
 }

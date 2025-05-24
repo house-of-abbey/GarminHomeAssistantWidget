@@ -28,3 +28,4 @@
 |   2.13  | Better support for templates by isolating erroneous returns and marking the menu item. Prevented the application crashing when settings are amended at run time. |
 |   2.14  | Bug fix for lack of phone connection when starting the widget. |
 |   2.15  | Templates returning anything other than a string get an error message rather than the value being discarded. Bug fix for reporting activity metrics that might be `null` sometimes. This is unsimulatable situation, so this version is a change based on an informed guess. |
+|   2.16  | Adding support for 24 new devices: approachs50, descentg2, descentmk1, descentmk343mm, descentmk351mm, edge1050, enduro3, fenix843mm, fenix847mm, fenix8solar47mm, fenix8solar51mm, fenixe, fr165, fr165m, fr57042mm, fr57047mm, fr970, gpsmap66, instinct3amoled45mm, instinct3amoled50mm, instinct3solar45mm, instincte40mm, instincte45mm, & vivoactive6. |

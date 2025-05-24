@@ -1,0 +1,22 @@
+<!--
+
+   Distributed under MIT Licence
+     See https://github.com/house-of-abbey/GarminHomeAssistantWidget/blob/main/LICENSE.
+
+
+   GarminHomeAssistantWidget is a Garmin IQ widget written in Monkey C. The source code is provided at:
+              https://github.com/house-of-abbey/GarminHomeAssistantWidget.
+
+   J D Abbey & P A Abbey, 28 December 2022
+
+  References:
+   * https://fonts.google.com/icons
+
+-->
+
+<drawables>
+    <bitmap id="ErrorIcon" filename="error.svg"/>
+    <bitmap id="GroupTypeIcon" filename="group_type.svg"/>
+    <bitmap id="TapTypeIcon" filename="tap_type.svg"/>
+    <bitmap id="InfoTypeIcon" filename="info_type.svg"/>
+</drawables>
