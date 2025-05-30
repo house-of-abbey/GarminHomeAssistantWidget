@@ -24,15 +24,16 @@
     Use "Monkey C: Edit Application" from the Visual Studio Code command palette
     to update the application attributes.
   -->
-  <iq:application id="4901cdfb-b4a2-4f33-96c7-f5be5992809e" type="widget" name="@Strings.AppName" entry="HomeAssistantApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.1.0">
+  <iq:application id="585af26f-6ff7-44e8-80dc-b3670e5b8648" type="widget" name="@Strings.AppName" entry="HomeAssistantApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.1.0">
     <!--
-      Use the following from the Visual Studio Code comand palette to edit
+      Use the following from the Visual Studio Code command palette to edit
       the build targets:
       "Monkey C: Set Products by Product Category" - Lets you add all products
                                   that belong to the same product category
       "Monkey C: Edit Products" - Lets you add or remove any product
     -->
     <iq:products>
+      <iq:product id="approachs50" />
       <iq:product id="approachs7042mm" />
       <iq:product id="approachs7047mm" />
       <iq:product id="d2air" />
@@ -42,12 +43,17 @@
       <iq:product id="d2deltas" />
       <iq:product id="d2mach1" />
       <iq:product id="descentg1" />
+      <iq:product id="descentg2" />
+      <iq:product id="descentmk1" />
       <iq:product id="descentmk2" />
       <iq:product id="descentmk2s" />
+      <iq:product id="descentmk343mm" />
+      <iq:product id="descentmk351mm" />
       <iq:product id="edge1030" />
       <iq:product id="edge1030bontrager" />
       <iq:product id="edge1030plus" />
       <iq:product id="edge1040" />
+      <iq:product id="edge1050" />
       <iq:product id="edge520plus" />
       <iq:product id="edge530" />
       <iq:product id="edge540" />
@@ -57,6 +63,7 @@
       <iq:product id="edgeexplore" />
       <iq:product id="edgeexplore2" />
       <iq:product id="enduro" />
+      <iq:product id="enduro3" />
       <iq:product id="epix2" />
       <iq:product id="epix2pro42mm" />
       <iq:product id="epix2pro47mm" />
@@ -80,7 +87,14 @@
       <iq:product id="fenix7x" />
       <iq:product id="fenix7xpro" />
       <iq:product id="fenix7xpronowifi" />
+      <iq:product id="fenix843mm" />
+      <iq:product id="fenix847mm" />
+      <iq:product id="fenix8solar47mm" />
+      <iq:product id="fenix8solar51mm" />
       <iq:product id="fenixchronos" />
+      <iq:product id="fenixe" />
+      <iq:product id="fr165" />
+      <iq:product id="fr165m" />
       <iq:product id="fr245" />
       <iq:product id="fr245m" />
       <iq:product id="fr255" />
@@ -90,6 +104,8 @@
       <iq:product id="fr265" />
       <iq:product id="fr265s" />
       <iq:product id="fr55" />
+      <iq:product id="fr57042mm" />
+      <iq:product id="fr57047mm" />
       <iq:product id="fr645" />
       <iq:product id="fr645m" />
       <iq:product id="fr745" />
@@ -98,11 +114,18 @@
       <iq:product id="fr945lte" />
       <iq:product id="fr955" />
       <iq:product id="fr965" />
+      <iq:product id="fr970" />
+      <iq:product id="gpsmap66" />
       <iq:product id="gpsmap67" />
       <iq:product id="instinct2" />
       <iq:product id="instinct2s" />
       <iq:product id="instinct2x" />
+      <iq:product id="instinct3amoled45mm" />
+      <iq:product id="instinct3amoled50mm" />
+      <iq:product id="instinct3solar45mm" />
       <iq:product id="instinctcrossover" />
+      <iq:product id="instincte40mm" />
+      <iq:product id="instincte45mm" />
       <iq:product id="legacyherocaptainmarvel" />
       <iq:product id="legacyherofirstavenger" />
       <iq:product id="legacysagadarthvader" />
@@ -135,6 +158,7 @@
       <iq:product id="vivoactive4" />
       <iq:product id="vivoactive4s" />
       <iq:product id="vivoactive5" />
+      <iq:product id="vivoactive6" />
     </iq:products>
     <!--
       Use "Monkey C: Edit Permissions" from the Visual Studio Code command
@@ -153,19 +177,17 @@
     <iq:languages>
       <iq:language>ara</iq:language>
       <iq:language>bul</iq:language>
-      <iq:language>zhs</iq:language>
-      <iq:language>zht</iq:language>
-      <iq:language>hrv</iq:language>
       <iq:language>ces</iq:language>
       <iq:language>dan</iq:language>
-      <iq:language>dut</iq:language>
       <iq:language>deu</iq:language>
-      <iq:language>gre</iq:language>
+      <iq:language>dut</iq:language>
       <iq:language>eng</iq:language>
       <iq:language>est</iq:language>
       <iq:language>fin</iq:language>
       <iq:language>fre</iq:language>
+      <iq:language>gre</iq:language>
       <iq:language>heb</iq:language>
+      <iq:language>hrv</iq:language>
       <iq:language>hun</iq:language>
       <iq:language>ind</iq:language>
       <iq:language>ita</iq:language>
@@ -173,13 +195,12 @@
       <iq:language>kor</iq:language>
       <iq:language>lav</iq:language>
       <iq:language>lit</iq:language>
-      <iq:language>zsm</iq:language>
       <iq:language>nob</iq:language>
       <iq:language>pol</iq:language>
       <iq:language>por</iq:language>
-      <iq:language>slo</iq:language>
       <iq:language>ron</iq:language>
       <!-- <iq:language>rus</iq:language> -->
+      <iq:language>slo</iq:language>
       <iq:language>slv</iq:language>
       <iq:language>spa</iq:language>
       <iq:language>swe</iq:language>
@@ -187,6 +208,9 @@
       <iq:language>tur</iq:language>
       <iq:language>ukr</iq:language>
       <iq:language>vie</iq:language>
+      <iq:language>zhs</iq:language>
+      <iq:language>zht</iq:language>
+      <iq:language>zsm</iq:language>
     </iq:languages>
     <!--
       Use "Monkey C: Configure Monkey Barrel" from the Visual Studio Code
