@@ -96,7 +96,6 @@ echo.
   -Dfile.encoding=UTF-8 ^
   -Dapple.awt.UIElement=true ^
   -jar %SDK_PATH%\monkeybrains.jar ^
-  --api-level 3.1.0 ^
   --output %IQ% ^
   --jungles %SRC%\monkey.jungle ^
   --private-key %SRC%\..\developer_key ^
