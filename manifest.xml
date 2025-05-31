@@ -24,7 +24,7 @@
     Use "Monkey C: Edit Application" from the Visual Studio Code command palette
     to update the application attributes.
   -->
-  <iq:application id="585af26f-6ff7-44e8-80dc-b3670e5b8648" type="widget" name="@Strings.AppName" entry="HomeAssistantApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.1.0">
+  <iq:application id="4901cdfb-b4a2-4f33-96c7-f5be5992809e" type="widget" name="@Strings.AppName" entry="HomeAssistantApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.1.0">
     <!--
       Use the following from the Visual Studio Code command palette to edit
       the build targets:
